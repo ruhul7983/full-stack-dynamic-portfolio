@@ -7,10 +7,8 @@
     <link rel="stylesheet" href="{{ asset('assets/css/global.css') }}">
 </head>
 <body>
-    @include('partials.header')
 
     @yield('content')
 
-    @include('partials.footer') 
 </body>
 </html>

@@ -1,0 +1,145 @@
+.projects-section {
+    padding: 100px 0;
+    background-color: var(--bg-color); /* Matches Global Grey */
+    font-family: var(--font-main, 'Inter', sans-serif);
+}
+
+.section-header {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 60px auto;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    margin: 10px 0 15px 0;
+}
+
+.section-header p {
+    color: #6b7280;
+}
+
+/* Grid Layout */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+}
+
+/* Card Styling */
+.project-card {
+    background: var(--white);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #e5e7eb;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.card-image {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    background-color: #e5e7eb;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover .card-image img {
+    transform: scale(1.05);
+}
+
+.card-content {
+    padding: 25px;
+}
+
+.card-content h3 {
+    font-size: 1.25rem;
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.card-content p {
+    font-size: 0.95rem;
+    color: #4b5563;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Tech Stack Tags */
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 25px;
+}
+
+.tech-stack span {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--primary-color);
+    background: #eef2ff; /* Very light primary */
+    padding: 4px 10px;
+    border-radius: 6px;
+}
+
+/* Action Buttons */
+.card-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #f3f4f6;
+    padding-top: 20px;
+}
+
+.btn-link {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.2s;
+}
+
+.btn-link:hover {
+    color: var(--primary-color);
+}
+
+.arrow-icon {
+    font-style: normal;
+    transition: transform 0.2s;
+}
+
+.btn-link:hover .arrow-icon {
+    transform: translateX(4px);
+}
+
+.github-link {
+    text-decoration: none;
+    color: #6b7280;
+    font-size: 0.9rem;
+}
+
+.github-link:hover {
+    color: var(--text-color);
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}

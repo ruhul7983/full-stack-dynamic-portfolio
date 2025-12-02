@@ -1,0 +1,127 @@
+.about-section {
+    padding: 100px 0;
+    background-color: var(--white); 
+    font-family: var(--font-main, 'Inter', sans-serif);
+}
+
+.about-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.about-content {
+    flex: 1;
+    min-width: 300px;
+}
+
+.section-subtitle {
+    text-transform: uppercase;
+    color: var(--primary-color);
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    font-size: 0.875rem;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.about-content h2 {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    margin-bottom: 30px;
+    line-height: 1.2;
+}
+
+.about-content p {
+    font-size: 1.05rem;
+    color: #4b5563;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.highlight {
+    color: var(--primary-color);
+}
+
+
+/* Right Side: Skills */
+.about-skills {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.skill-card {
+    background: var(--bg-color);
+    padding: 25px;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.eduction-card {
+    background: var(--bg-color);
+    padding: 25px;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateX(10px); 
+    background: #eef2ff;
+}
+.eduction-card:hover {
+    transform: translateX(10px); 
+    background: #072278;
+}
+
+.skill-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tags span {
+    background: var(--white);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #4b5563;
+    border: 1px solid #e5e7eb;
+}
+
+.highlight-card {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+.highlight-card h3, 
+.highlight-card p, 
+.highlight-card small {
+    color: var(--white);
+}
+
+.highlight-card small {
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .about-row {
+        flex-direction: column;
+        gap: 40px;
+    }
+    
+    .about-content h2 {
+        font-size: 2rem;
+    }
+}

@@ -1,0 +1,17 @@
+:root {
+    --primary-color: #4f46e5;
+    --text-color: #1f2937;
+    --bg-color: #f3f4f6;
+    --white: #ffffff;
+    
+    /* You can add global font settings here too */
+    --font-main: 'Inter', sans-serif;
+}
+
+/* Moving .container here makes it reusable everywhere */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+

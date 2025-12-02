@@ -1,0 +1,132 @@
+/* Navbar Base Styles */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.95); /* Slight transparency */
+    backdrop-filter: blur(10px); /* Blurring effect behind nav */
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+    z-index: 1000;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    font-family: var(--font-main, 'Inter', sans-serif);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo Styling */
+.nav-logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text-color);
+    text-decoration: none;
+    letter-spacing: -0.5px;
+    transition: color 0.3s ease;
+}
+
+.nav-logo:hover {
+    color: var(--primary-color);
+}
+
+/* Desktop Menu */
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #4b5563;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--primary-color);
+}
+
+/* "Contact" Button Style in Navbar */
+.btn-nav {
+    padding: 8px 20px;
+    background-color: var(--primary-color);
+    color: var(--white) !important; /* Force white text */
+    border-radius: 6px;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-nav:hover {
+    background-color: #4338ca;
+    transform: translateY(-2px);
+}
+
+/* Hamburger Icon (Hidden on Desktop) */
+.hamburger-menu {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background-color: var(--text-color);
+    border-radius: 2px;
+}
+
+/* ============================
+   Mobile Responsive Styles 
+   ============================ */
+@media (max-width: 768px) {
+    .hamburger-menu {
+        display: block;
+    }
+
+    /* Hide the menu by default on mobile */
+    .nav-menu {
+        position: fixed;
+        left: -100%; /* Move off-screen */
+        top: 70px; /* Below the navbar height */
+        gap: 0;
+        flex-direction: column;
+        background-color: var(--white);
+        width: 100%;
+        text-align: center;
+        transition: 0.4s ease;
+        box-shadow: 0 10px 10px rgba(0,0,0,0.05);
+    }
+
+    /* When JavaScript adds the .active class, slide it in */
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-item {
+        margin: 20px 0;
+    }
+
+    /* Hamburger Animation to "X" */
+    .hamburger-menu.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger-menu.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger-menu.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}

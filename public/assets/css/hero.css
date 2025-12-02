@@ -1,0 +1,135 @@
+
+.hero-section {
+    width: 100%;
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    background-color: var(--bg-color);
+    padding: 40px 0;
+    font-family: 'Inter', sans-serif;
+}
+
+
+
+.hero-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    flex-wrap: wrap-reverse;
+}
+
+.hero-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.sub-headline {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 14px;
+    color: var(--primary-color);
+    font-weight: 700;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.hero-text h1 {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    color: var(--text-color);
+    margin-bottom: 25px;
+    font-weight: 800;
+}
+
+.hero-text .highlight {
+    color: var(--primary-color);
+    background: -webkit-linear-gradient(45deg, #4f46e5, #9333ea);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-text p {
+    font-size: 1.125rem;
+    color: #4b5563;
+    margin-bottom: 35px;
+    max-width: 500px;
+    line-height: 1.6;
+}
+
+.cta-group {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    padding: 12px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    border: 2px solid var(--text-color);
+    color: var(--text-color);
+}
+
+.btn-outline:hover {
+    background-color: var(--text-color);
+    color: var(--white);
+}
+
+.hero-image-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.image-box {
+    position: relative;
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+    background: #e0e0e0;
+}
+
+.image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+    
+    .image-box {
+        width: 300px;
+        height: 300px;
+    }
+    
+    .hero-row {
+        gap: 30px;
+        text-align: center;
+    }
+
+    .hero-text p, .cta-group {
+        margin-left: auto;
+        margin-right: auto;
+        justify-content: center;
+    }
+}

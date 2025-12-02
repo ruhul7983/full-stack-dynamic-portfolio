@@ -1,51 +1,46 @@
-<style>
-  
-    .navbar{
-        display: flex;
-        justify-content:space-between;
-        align-items: center;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        position:fixed;
-        top: 0;
-        left:0;
-        right:0;
-        z-index:50;
-        background-color: white;
-        padding: 0px 20px 0px 20px;
-        
-    }
-    .name{
-        font-weight: bold;
-        font-size: 20px;
-    }
-    .name:hover{
-        color: gray;
-    }
-    ul{
-        display: flex;
-        list-style: none;
-        gap: 50px;
-    }
-    ul a{
-        text-decoration: none;
-        color:black;
-    }
-    ul a:hover{
-        text-decoration: underline;
-        color: blue;
-    }
-
-</style>
+<link rel="stylesheet" href="{{ asset('assets/css/header.css') }}">
 
 <nav class="navbar">
-    <p class="name">
-        Ruhul Amin
-    </p>
+    <div class="container nav-container">
+        <a href="{{ url('/') }}" class="nav-logo">
+            Md Ruhul Amin
+        </a>
 
-    <ul>
-        <a href="#"><li>Home</li></a>
-        <a href="#"><li>About</li></a>
-        <a href="#"><li>Project</li></a>
-        <a href="#"><li>Contact</li></a>
-    </ul>
+        <div class="hamburger-menu" id="hamburger-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
+        <ul class="nav-menu" id="nav-menu">
+            <li class="nav-item">
+                <a href="{{ url('/') }}" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="#about" class="nav-link">About</a>
+            </li>
+            <li class="nav-item">
+                <a href="#projects" class="nav-link">Projects</a>
+            </li>
+            <li class="nav-item">
+                <a href="#contact" class="nav-link btn-nav">Contact</a>
+            </li>
+        </ul>
+    </div>
 </nav>
+
+<script>
+    const hamburger = document.getElementById('hamburger-menu');
+    const navMenu = document.getElementById('nav-menu');
+
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
+
+    // Close menu when a link is clicked
+    document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+    }));
+</script>
