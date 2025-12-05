@@ -10,62 +10,49 @@
 
         <div class="projects-grid">
             
-            <div class="project-card">
-                <div class="card-image">
-                    <img src="https://placehold.co/600x400/e0e0e0/1f2937?text=RiverHome+Real+Estate" alt="RiverHome Project">
-                </div>
-                <div class="card-content">
-                    <h3>RiverHome Real Estate</h3>
-                    <p>A comprehensive real estate platform allowing users to list, search, and filter properties. Built with a focus on speed and SEO.</p>
-                    <div class="tech-stack">
-                        <span>Laravel</span>
-                        <span>MySQL</span>
-                        <span>Bootstrap</span>
+            {{-- 🔥 Dynamic Project Cards (same UI, only mapped) --}}
+            @foreach($projects as $project)
+                <div class="project-card">
+                    <div class="card-image">
+                        <img 
+                            src="{{ asset('storage/' . $project->image_path) }}" 
+                            alt="{{ $project->title }}"
+                        >
                     </div>
-                    <div class="card-actions">
-                        <a href="#" class="btn-link">View Live <i class="arrow-icon">→</i></a>
-                        <a href="#" class="github-link">GitHub</a>
-                    </div>
-                </div>
-            </div>
 
-            <div class="project-card">
-                <div class="card-image">
-                    <img src="https://placehold.co/600x400/e0e0e0/1f2937?text=Note+Taking+App" alt="Note App">
-                </div>
-                <div class="card-content">
-                    <h3>Secure Note App</h3>
-                    <p>A dynamic note-taking application featuring user authentication, real-time updates, and an intuitive UI.</p>
-                    <div class="tech-stack">
-                        <span>Node.js</span>
-                        <span>MongoDB</span>
-                        <span>React</span>
-                    </div>
-                    <div class="card-actions">
-                        <a href="#" class="btn-link">View Live <i class="arrow-icon">→</i></a>
-                        <a href="#" class="github-link">GitHub</a>
-                    </div>
-                </div>
-            </div>
+                    <div class="card-content">
+                        <h3>{{ $project->title }}</h3>
 
-            <div class="project-card">
-                <div class="card-image">
-                    <img src="https://placehold.co/600x400/e0e0e0/1f2937?text=Portfolio+Website" alt="Portfolio">
-                </div>
-                <div class="card-content">
-                    <h3>Personal Portfolio</h3>
-                    <p>My personal digital playground featuring stylized digital illustrations and a showcase of my web development journey.</p>
-                    <div class="tech-stack">
-                        <span>Next.js</span>
-                        <span>GSAP</span>
-                        <span>Tailwind</span>
+                        <p>{{ Str::limit($project->description, 150) }}</p>
+
+                        <div class="tech-stack">
+                            @foreach(explode(',', $project->technology_used ?? '') as $tech)
+                                @if(trim($tech) !== '')
+                                    <span>{{ trim($tech) }}</span>
+                                @endif
+                            @endforeach
+                        </div>
+
+                        <div class="card-actions">
+                            <a 
+                                href="{{ $project->live_view_url ?? '#' }}" 
+                                class="btn-link" 
+                                target="_blank"
+                            >
+                                View Live <i class="arrow-icon">→</i>
+                            </a>
+
+                            <a 
+                                href="{{ $project->github_link ?? '#' }}" 
+                                class="github-link" 
+                                target="_blank"
+                            >
+                                GitHub
+                            </a>
+                        </div>
                     </div>
-                    <div class="card-actions">
-                        <a href="#" class="btn-link">View Live <i class="arrow-icon">→</i></a>
-                        <a href="#" class="github-link">GitHub</a>
-                    </div>
                 </div>
-            </div>
+            @endforeach
 
         </div>
     </div>

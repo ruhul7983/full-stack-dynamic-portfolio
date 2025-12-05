@@ -12,7 +12,7 @@
                 <p>Enter your credentials to access the admin panel.</p>
             </div>
 
-            <form action="" method="POST">
+            <form action={{ route("login") }} method="POST">
                 @csrf
                 
                 <div class="form-group">
