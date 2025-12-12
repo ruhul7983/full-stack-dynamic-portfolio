@@ -143,3 +143,9 @@
         grid-template-columns: 1fr;
     }
 }
+
+@media (max-width: 7658px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
